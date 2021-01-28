@@ -1,7 +1,6 @@
 import Wartremover.wartErrors
 import sbtwelcome.UsefulTask
 
-ThisBuild / name := "Neetizer"
 ThisBuild / version := "0.1.0"
 ThisBuild / scalaVersion := "2.13.4"
 
@@ -33,7 +32,22 @@ inThisBuild(
   )
 )
 
-lazy val commonSetting = inConfig(Lint) {
+lazy val commonSetting = Seq(
+  scalacOptions ++= Seq(
+    "-deprecation",
+    "-Xlint:_,-byname-implicit",
+    "-language:existentials",
+    "-language:experimental.macros",
+    "-language:higherKinds",
+    "-language:implicitConversions",
+    "-Ywarn-dead-code",
+    "-Ywarn-numeric-widen",
+    "-Ywarn-unused",
+    "-Ymacro-annotations",
+    "-Wunused:imports",
+    "-Yrangepos"
+  )
+) ++ inConfig(Lint) {
   Defaults.compileSettings ++ wartremover.WartRemover.projectSettings ++
     Seq(
       sources in Lint := {
