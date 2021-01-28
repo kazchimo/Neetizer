@@ -20,7 +20,8 @@ logo :=
 usefulTasks := Seq(
   UsefulTask("c", "compile", "Compile all modules"),
   UsefulTask("r", "reload", "Reload project"),
-  UsefulTask("lint", "lint:compile", "Check lint by Wartremover")
+  UsefulTask("lint", "lint:compile", "Check lint by Wartremover"),
+  UsefulTask("fmt", "scalafmtAll; scalafixAll;", "Format code")
 )
 
 inThisBuild(
