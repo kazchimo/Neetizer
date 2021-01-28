@@ -10,6 +10,7 @@ object Dependencies {
   }
 
   object Deps {
-    lazy val Zio: Seq[ModuleID] = Seq("zio", "zio-streams", "zio-macros").map(Org.Zio %% _ % Version.Zio)
+    lazy val Zio: Seq[ModuleID] =
+      Seq("zio", "zio-streams", "zio-macros").map(Org.Zio %% _ % Version.Zio)
   }
 }
