@@ -1,7 +1,7 @@
 import Wartremover.wartErrors
 import sbtwelcome.UsefulTask
 
-ThisBuild / version := "0.1.0"
+ThisBuild / version      := "0.1.0"
 ThisBuild / scalaVersion := "2.13.4"
 
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.4"
@@ -27,8 +27,8 @@ usefulTasks := Seq(
 inThisBuild(
   Seq(
     addCompilerPlugin(scalafixSemanticdb),
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+    semanticdbEnabled          := true,
+    semanticdbVersion          := scalafixSemanticdb.revision,
     scalafixScalaBinaryVersion := "2.13"
   )
 )
@@ -51,7 +51,7 @@ lazy val commonSetting = Seq(
 ) ++ inConfig(Lint) {
   Defaults.compileSettings ++ wartremover.WartRemover.projectSettings ++
     Seq(
-      sources in Lint := {
+      sources in Lint   := {
         val old = (sources in Lint).value
         old ++ (sources in Compile).value
       },
