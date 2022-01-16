@@ -2,7 +2,7 @@ import Wartremover.wartErrors
 import sbtwelcome.UsefulTask
 
 ThisBuild / version := "0.1.0"
-ThisBuild / scalaVersion := "2.13.4"
+ThisBuild / scalaVersion := "2.13.8"
 
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.4"
 
